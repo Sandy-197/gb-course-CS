@@ -10,7 +10,7 @@ int second = int.Parse(Console.ReadLine() ?? "0");
 Console.Write("Введите третье число: ");
 int third = int.Parse(Console.ReadLine() ?? "0");
 
-if ((first > second) & (first > third)) 
+if (first > second && first > third)
 { 
     Console.WriteLine("Максимальное число: " + first);
 }
