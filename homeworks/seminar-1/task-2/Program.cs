@@ -6,7 +6,7 @@
 
 Console.Write ("Введите число: ");
 int value = int.Parse(Console.ReadLine() ?? "0");
-if (value %2 == 0) 
+if (value %2 == 0)  // Проверка остатка от деления на 2, если 0, то четное, если не 0(1), то нечётное
 {
     Console.WriteLine ("Число "+ value + " чётное.");
 }
