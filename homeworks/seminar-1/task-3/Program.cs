@@ -5,6 +5,7 @@
 Console.Write ("Введите число N > 0: ");
 int n = int.Parse(Console.ReadLine() ?? "0");
 
+// Вариант 1. Цикл for, начинаем с 2ки и идем с шагом +2
 for (int i = 2; i <= n; i = i + 2)
 {
     Console.Write (i);
