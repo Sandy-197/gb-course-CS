@@ -15,7 +15,7 @@ int Make3FirstDigitValue(int num)
 }
 
 Console.Clear();
-Console.Write("Введите любое целое число: ");
+Console.Write("Введите любое целое число > 0: ");
 int num = int.Parse(Console.ReadLine() ?? "0");
 
 if ( num < 100 && num > -100 ) 
