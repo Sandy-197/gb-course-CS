@@ -1,26 +1,11 @@
 ﻿// Напишите программу, которая принимает на вход число и проверяет,
-//  кратно ли оно одновременно 7 и 23.
+// кратно ли оно одновременно 7 и 23.
 
 Console.Clear();
 Console.Write("введите число:");
 int num = int.Parse(Console.ReadLine()!);
-
-
-if(num % 7 == 0 && num % 23 == 0 )
-{
- Console.WriteLine($"{num} кратно 7 и 23");   
-}
-else 
-{
-    Console.WriteLine($"{num} не кратно 7 и 23 "); 
-}
-// Напишите программу, которая принимает на вход число и проверяет,
-//  кратно ли оно одновременно 7 и 23.
-
-Console.Clear();
-Console.Write("введите число:");
-int num = int.Parse(Console.ReadLine()!);
-int a1 = 7, a2 = 23;
+int a1 = 7;
+int a2 = 23;
 
 if(num % a1 == 0 && num % a2 == 0 )
 {
@@ -29,4 +14,4 @@ if(num % a1 == 0 && num % a2 == 0 )
 else 
 {
     Console.WriteLine($"{num} не кратно {a1} и {a2} "); 
-}    
+}

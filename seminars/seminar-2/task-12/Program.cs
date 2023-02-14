@@ -6,13 +6,11 @@
 // 16, 4  -> кратно
 
 Console.Clear();
-Console.WriteLine("введите число 1:");
-
+Console.Write("Введите число 1: ");
 int num1 = int.Parse(Console.ReadLine()!);
-Console.WriteLine("введите число 2:");
+Console.Write("Введите число 2: ");
 int num2 = int.Parse(Console.ReadLine()!);
-//int num1 = new Random().Next(1,100);
-//int num2 = new Random().Next(1,100);
+
 int ost  = num1 % num2;
 if (ost == 0)
 {
