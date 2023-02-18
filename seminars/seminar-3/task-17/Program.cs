@@ -37,10 +37,3 @@ else
 {
     Console.WriteLine("В точке пересечения координат");
 }
-switch (X,Y)
-{
-    case >0, >0:
-    {
-        Console.WriteLine("1");
-    }
-}
