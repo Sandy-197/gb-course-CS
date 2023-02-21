@@ -6,7 +6,7 @@
 string Prompt(string intro, bool oneline = true)
 {
     Console.Write($"{intro}" + ((oneline) ? "" : "\n").ToString());
-    string res = Console.ReadLine();
+    string res = Console.ReadLine()??"";
     return res;
 }
 
