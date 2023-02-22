@@ -18,6 +18,6 @@ double x2 = double.Parse(Prompt("Введите X2: "));
 double y2 = double.Parse(Prompt("Введите Y2: "));
 double z2 = double.Parse(Prompt("Введите Z2: "));
 
-double d = Math.Sqrt(Math.Pow(x1 - x2, 2) + Math.Pow(y1 - y2, 2) + Math.Pow(z1 - z2, 2));
+double d = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2) + Math.Pow(z2 - z1, 2));
 
-Console.WriteLine($"d={d:f2}");
+Console.WriteLine($"Длина вектора между точками А ({x1},{y1},{z1}) и B ({x2},{y2},{z2}) равна {d:f4}.");
