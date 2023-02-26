@@ -18,7 +18,7 @@ void PrintArray(int [] ar)
     Console.WriteLine($"[{String.Join(", ", ar)}]");
 }
 
-int GetCountOrdInArray(int[] arr)
+int GetCountEvenInArray(int[] arr)
 {
     int count = 0;
     foreach (int el in arr)
@@ -30,4 +30,4 @@ int GetCountOrdInArray(int[] arr)
 
 int[] array = FillArray(100, 999, 10);
 PrintArray(array);
-Console.WriteLine(GetCountOrdInArray(array));
+Console.WriteLine(GetCountEvenInArray(array));
