@@ -6,8 +6,13 @@ bool IsTriangle(int a, int b, int c)
 {
     return (a + b > c) && (a + c > b) && (c + b > a);
 }
-
-int a = 3;
-int b = 4;
-int c = 5;
-Console.WriteLine(IsTriangle(a, b, c) ? "Yes" : "No");
+string Prompt(string intro, bool oneline = true)
+{
+    Console.Write($"{intro}" + ((oneline) ? "" : "\n").ToString());
+    string res = Console.ReadLine() ?? "";
+    return res;
+}
+int a = Prompt("Введите первую сторону: ");
+int b = Prompt("Введите вторую сторону: ");
+int c = Prompt("Введите третью сторону: ");
+Console.WriteLine(IsTriangle(a, b, c) ? "Да, это треугольник." : "Нет, это не треугольник.");
