@@ -1,15 +1,18 @@
-﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+﻿// Задача 41: 
+// Пользователь вводит с клавиатуры M чисел. 
+// Посчитайте, сколько чисел больше 0 ввёл пользователь.
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
+
 string Prompt(string intro, bool oneline = true)
 {
     Console.Write($"{intro}" + ((oneline) ? "" : "\n").ToString());
     string res = Console.ReadLine() ?? "";
     return res;
 }
-int[] ConvertStringToIntArray(string s)
+int[] ConvertStringToIntArray(string s, string splitString = " ")
 {
-    return s.Split(" ").Select(item => int.Parse(item)).ToArray();
+    return s.Split(splitString).Select(item => int.Parse(item)).ToArray();
 }
 void PrintArray(int[] array)
 {
