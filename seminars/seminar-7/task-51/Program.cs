@@ -12,7 +12,7 @@ using static System.Console;
 
 Clear();
 int m = int.Parse(Prompt("Введите количество строк массива: "));
-int n = int.Parse(Prompt("Введите количество строк массива: ");
+int n = int.Parse(Prompt("Введите количество строк массива: "));
 
 int[,] array = GetArray(m, n);
 PrintArray(array);
@@ -24,14 +24,17 @@ string Prompt(string intro, bool oneline = true)
     return res;
 }
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+int[,] GetArray(int m, int n, int minValue = 0, int maxValue = 0)
 {
     int[,] result = new int[m, n];
-    for (int i = 0; i < m; i++)
+    if (!(minValue == 0 && maxValue == 0))
     {
-        for (int j = 0; j < n; j++)
+        for (int i = 0; i < m; i++)
         {
-            result[i, j] = new Random().Next(minValue, maxValue + 1);
+            for (int j = 0; j < n; j++)
+            {
+                result[i, j] = new Random().Next(minValue, maxValue + 1);
+            }
         }
     }
     return result;
@@ -53,7 +56,7 @@ int GetSumDiag(int[,] array)
 {
     int res = 0;
     int max = array.GetLength(0) < array.GetLength(1) ? array.GetLength(0) : array.GetLength(1);
-    
+
     for (int i = 0; i < max; i++)
     {
         res += array[i, i];
