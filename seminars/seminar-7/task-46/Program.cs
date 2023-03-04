@@ -1,6 +1,8 @@
 ﻿using System;
 using static System.Console;
 
+
+/* Методы */
 int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
     int[,] result = new int[m, n];

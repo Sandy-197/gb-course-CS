@@ -4,21 +4,15 @@
 // Например, изначально массив выглядел вот так:
 
 // 1 4 7 2
-
 // 5 9 2 3
-
 // 8 4 2 4
-
 // 1 2 3 4
 
 // Новый массив будет выглядеть вот так:
 
 // 1 4 7 2
-
 // 5 **81** 2 **9**
-
 // 8 4 2 4
-
 // 1 **4** 3 **16**
 
 using System;
@@ -30,8 +24,10 @@ int n = int.Parse(Prompt("Введите количество строк мас�
 
 int[,] array = GetArray(m, n);
 PrintArray(array);
-W
+array = ChangeArray(array);
+PrintArray(array);
 
+/* Методы */
 string Prompt(string intro, bool oneline = true)
 {
     Console.Write($"{intro}" + ((oneline) ? "" : "\n").ToString());
@@ -39,7 +35,7 @@ string Prompt(string intro, bool oneline = true)
     return res;
 }
 
-int[,] GetArray(int m, int n, int minValue, int maxValue)
+int[,] GetArray(int m, int n, int minValue = 0, int maxValue = 1)
 {
     int[,] result = new int[m, n];
     for (int i = 0; i < m; i++)

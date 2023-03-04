@@ -25,8 +25,7 @@ PrintTwoDemensionsArray(array);
 WriteLine();
 PrintArray(MeanValue(array, BY_ROW));
 
-/* --- МЕТОДЫ ------------------------*/
-
+/* Методы */
 int[] MeanValue(int[,] array, bool byColumn = true)
 {
     int[] res;
