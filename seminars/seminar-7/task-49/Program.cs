@@ -26,7 +26,7 @@ using static System.Console;
 
 Clear();
 int m = int.Parse(Prompt("Введите количество строк массива: "));
-int n = int.Parse(Prompt("Введите количество строк массива: ");
+int n = int.Parse(Prompt("Введите количество строк массива: "));
 
 int[,] array = GetArray(m, n);
 PrintArray(array);
