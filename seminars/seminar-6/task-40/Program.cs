@@ -12,7 +12,7 @@ string Prompt(string intro, bool oneline = true)
     string res = Console.ReadLine() ?? "";
     return res;
 }
-int a = Prompt("Введите первую сторону: ");
-int b = Prompt("Введите вторую сторону: ");
-int c = Prompt("Введите третью сторону: ");
+int a = int.Parse(Prompt("Введите первую сторону: "));
+int b = int.Parse(Prompt("Введите вторую сторону: "));
+int c = int.Parse(Prompt("Введите третью сторону: "));
 Console.WriteLine(IsTriangle(a, b, c) ? "Да, это треугольник." : "Нет, это не треугольник.");
