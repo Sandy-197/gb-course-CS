@@ -214,7 +214,9 @@ int[,] NextGeneration(int[,] array)
     {
         for (int c = 1; c < arrayWorld.GetLength(COLUMN) - 1; c++)
         {
-            count = 0;
+            count = (arrayWorld[r, c] == 1) ? -1 : 0;
+            result[r - 1, c - 1] = arrayWorld[r, c];
+
             for (int rw = r - 1; rw < r + 2; rw++)
             {
                 for (int cw = c - 1; cw < c + 2; cw++)
@@ -222,8 +224,7 @@ int[,] NextGeneration(int[,] array)
                     count += arrayWorld[rw, cw];
                 }
             }
-            if (arrayWorld[r, c] == 1) { count--; }
-            result[r - 1, c - 1] = arrayWorld[r, c];
+            
             if ((arrayWorld[r, c] == 0) && (count == 3))
             {
                 result[r - 1, c - 1] = 1;
