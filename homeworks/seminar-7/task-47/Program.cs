@@ -45,7 +45,7 @@ void PrintArray(double[,] inArray)
     {
         for (int j = 0; j < inArray.GetLength(1); j++)
         {
-            Write($"{inArray[i, j]} ");
+            Write($"{inArray[i, j]}\t");
         }
         WriteLine();
     }
