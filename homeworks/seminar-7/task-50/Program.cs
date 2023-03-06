@@ -17,8 +17,8 @@ Clear();
 // Инициализация массива m строк и n столбцов
 int m = int.Parse(Prompt("Введите количество строк массива: "));
 int n = int.Parse(Prompt("Введите количество строк массива: "));
-int[,] array = GetArray(m, n, 10, 99);
-PrintArray(array);
+int[,] array = GetArray(m, n, 0, 9);
+PrintArray(array, div: ", ");
 
 // Поиск элемента массива по индексу
 int r = int.Parse(Prompt("Введите номер строки массива для поиска: "));
@@ -42,7 +42,7 @@ if (fArray.GetLength(ROW) == 0)
 }
 else
 {
-    PrintArray(fArray);
+    PrintArray(fArray, "Найденные позиции элемента:\n", div: ", ");
 }
 
 /* Методы */
@@ -84,15 +84,18 @@ int[,] GetArray(int row, int column, int minValue = 0, int maxValue = 0)
 // PrintArray - вывоит в консоль двумерный массив, переданный в параметре.
 // Параметры:
 // inArray - целочисленыый двумерный массив
-void PrintArray(int[,] inArray)
+// title - заголовок перед вывыдом массива
+void PrintArray(int[,] inArray, string title = "", string div = "\t")
 {
+    if (title != "") { Write(title); }
     for (int r = 0; r < inArray.GetLength(ROW); r++)
     {
+        Write("[");
         for (int c = 0; c < inArray.GetLength(COLUMN); c++)
         {
-            Write($"{inArray[r, c]} ");
+            Write($"{inArray[r, c]}{((c < inArray.GetLength(COLUMN) - 1) ? div : "")}");
         }
-        WriteLine();
+        WriteLine("]");
     }
 }
 
@@ -134,9 +137,9 @@ int[,] GetCoordinateOfValue(int[,] array, int toFind)
 {
     int[,] result = new int[0, 2];
     int count = 0;
-    for (int r = 0; r < array.GetLength(0); r++)
+    for (int r = 0; r < array.GetLength(ROW); r++)
     {
-        for (int c = 0; c < array.GetLength(0); c++)
+        for (int c = 0; c < array.GetLength(COLUMN); c++)
         {
             if (array[r, c] == toFind)
             {
