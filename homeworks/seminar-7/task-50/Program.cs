@@ -23,6 +23,7 @@ PrintArray(array, div: ", ");
 // Поиск элемента массива по индексу
 int r = int.Parse(Prompt("Введите номер строки массива для поиска: "));
 int c = int.Parse(Prompt("Введите номер колонки массива для поиска: "));
+
 int? value = GetValueFromArray(r, c, array);
 if (value != null)
 {
@@ -36,7 +37,7 @@ else
 // Поиск нужного значения по элементам массива
 int f = int.Parse(Prompt("Введите икомое число: "));
 int[,] fArray = GetCoordinateOfValue(array, f);
-if (fArray.GetLength(ROW) == 0)
+if (fArray.Length == 0)
 {
     WriteLine("Такого элемента нет.");
 }
