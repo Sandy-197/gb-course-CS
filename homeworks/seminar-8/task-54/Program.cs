@@ -7,12 +7,11 @@
 // 7 4 2 1
 // 9 5 3 2
 // 8 4 4 2
-using System;
 using static System.Console;
 Clear();
 
 int m = int.Parse(Prompt("Введите количество строк массива: "));
-int n = int.Parse(Prompt("Введите количество строк массива: "));
+int n = int.Parse(Prompt("Введите количество столбцов массива: "));
 int[,] array = GetArray(m, n, 0, 9);
 WriteLine("Начальный массив: ");
 PrintArray(array);
@@ -45,7 +44,7 @@ int[,] GetArray(int m, int n, int minValue = 0, int maxValue = 0)
 void PrintArray(int[,] inArray)
 {
     int i = 1;
-    int n = inArray.GetLength(0);
+    int n = inArray.GetLength(1);
     foreach (var item in inArray)
     {
         Write($"{item,3}" + ((i++ % n == 0) ? "\n" : ""));
