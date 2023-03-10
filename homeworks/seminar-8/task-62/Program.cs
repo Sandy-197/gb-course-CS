@@ -54,8 +54,8 @@ int[,] GetSpiralArray(int n, bool direction = true)
 void PrintArrayByElement(int[,] inArray)
 {
     int i = 1;
-    int n = inArray.GetLength(0);
-    foreach (var item in array)
+    int n = inArray.GetLength(1);
+    foreach (var item in inArray)
     {
         Write($"{item,3}" + ((i++ % n == 0) ? "\n" : ""));
     }
