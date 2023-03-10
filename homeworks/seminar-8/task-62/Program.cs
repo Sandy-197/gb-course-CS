@@ -10,7 +10,8 @@ using static System.Console;
 Clear();
 
 int n = int.Parse(Prompt("Введите размерность квадратного массива: "));
-int[,] array = GetSpiralArray(n, false);
+// Если вызываем метод с direction:True заполняться будет по часовой стрелке, если False против часовой
+int[,] array = GetSpiralArray(n, true);
 PrintArrayByElement(array);
 
 /* Методы */
@@ -33,7 +34,7 @@ int[,] GetSpiralArray(int n, bool direction = true)
             {
                 int i = r + 1;
                 int j = c + 1;
-                int switcher = ((direction ? 1 : -1)*(c - r) + n) / n;
+                int switcher = ((direction ? 1 : -1) * (c - r) + n) / n;
                 int Ic = Math.Abs(i - n / 2 - 1) + (i - 1) / (n / 2) * ((n - 1) % 2);
                 int Jc = Math.Abs(j - n / 2 - 1) + (j - 1) / (n / 2) * ((n - 1) % 2);
                 int ring = n / 2 - (Math.Abs(Ic - Jc) + Ic + Jc) / 2;
@@ -56,6 +57,6 @@ void PrintArrayByElement(int[,] inArray)
     int n = inArray.GetLength(0);
     foreach (var item in array)
     {
-        Write($"{item,+3}" + ((i++ % n == 0) ? "\n" : ""));
+        Write($"{item,3}" + ((i++ % n == 0) ? "\n" : ""));
     }
 }
