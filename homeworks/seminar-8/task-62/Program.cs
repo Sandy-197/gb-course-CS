@@ -21,7 +21,7 @@ string Prompt(string intro, bool oneline = true)
     string res = Console.ReadLine() ?? "";
     return res;
 }
-
+// Если direction = true, заполняется по часовой стрелки, если false против часовой.
 int[,] GetSpiralArray(int n, bool direction = true)
 {
     if (n < 0) { return new int[0, 0]; }
