@@ -50,7 +50,7 @@ void PrintArray(int[,] inArray)
         Write($"{item,3}" + ((i++ % n == 0) ? "\n" : ""));
     }
 }
-
+// Если direction = true тогда упорядочивается по возрастанию, если false то по убыванию строки.
 int[] SortRowArray(int[] array, bool direction = true)
 {
     for (int i = 0; i < array.Length - 1; i++)
